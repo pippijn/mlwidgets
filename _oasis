@@ -1,0 +1,41 @@
+OASISFormat:                    0.2
+OCamlVersion:                   >= 3.12
+Name:                           ndk
+Version:                        0.1
+Synopsis:                       Curses UI Development Toolkit
+Authors:                        Pippijn van Steenhoven
+License:                        GPL
+LicenseFile:                    COPYING
+Plugins:                        META (0.2),
+                                StdFiles (0.2)
+XStdFilesAUTHORS:               false
+XStdFilesINSTALLFilename:       INSTALL
+XStdFilesREADME:                false
+
+SourceRepository head
+        Type:                   git
+        Location:               git://git.xinutec.org/devel/ndk.git
+        Browser:                http://xinutec.org/git/devel/ndk.git
+
+
+Library ncurses
+        Path:                   ncurses
+        BuildTools:             ocamlbuild
+        BuildDepends:           curses,batteries
+        Modules:                Ncurses
+        CSources:               ml_ncurses.c
+
+
+Library widgets
+        Path:                   widgets
+        BuildTools:             ocamlbuild
+        BuildDepends:           unix,str,ncurses,batteries,sexplib,lwt.unix,facile
+        Modules:                Widget
+
+
+Executable test
+        Path:                   testsuite
+        BuildTools:             ocamlbuild
+        BuildDepends:           widgets,ncurses
+        MainIs:                 test.ml
+        CompiledObject:         native

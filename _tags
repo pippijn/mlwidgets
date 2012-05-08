@@ -1,0 +1,43 @@
+# OASIS_START
+# DO NOT EDIT (digest: eadd91d4e4c2d7a3fe535b0dbb99205f)
+# Library ncurses
+"ncurses": include
+<ncurses/ncurses.{cma,cmxa}>: use_libncurses
+<ncurses/*.ml{,i}>: pkg_curses
+<ncurses/*.ml{,i}>: pkg_batteries
+"ncurses/ml_ncurses.c": pkg_curses
+"ncurses/ml_ncurses.c": pkg_batteries
+# Library widgets
+"widgets": include
+<widgets/*.ml{,i}>: use_ncurses
+<widgets/*.ml{,i}>: pkg_unix
+<widgets/*.ml{,i}>: pkg_str
+<widgets/*.ml{,i}>: pkg_sexplib
+<widgets/*.ml{,i}>: pkg_lwt.unix
+<widgets/*.ml{,i}>: pkg_facile
+<widgets/*.ml{,i}>: pkg_curses
+<widgets/*.ml{,i}>: pkg_batteries
+# Executable test
+"testsuite/test.native": use_widgets
+"testsuite/test.native": use_ncurses
+"testsuite/test.native": pkg_unix
+"testsuite/test.native": pkg_str
+"testsuite/test.native": pkg_sexplib
+"testsuite/test.native": pkg_lwt.unix
+"testsuite/test.native": pkg_facile
+"testsuite/test.native": pkg_curses
+"testsuite/test.native": pkg_batteries
+<testsuite/*.ml{,i}>: use_widgets
+<testsuite/*.ml{,i}>: use_ncurses
+<testsuite/*.ml{,i}>: pkg_unix
+<testsuite/*.ml{,i}>: pkg_str
+<testsuite/*.ml{,i}>: pkg_sexplib
+<testsuite/*.ml{,i}>: pkg_lwt.unix
+<testsuite/*.ml{,i}>: pkg_facile
+<testsuite/*.ml{,i}>: pkg_curses
+<testsuite/*.ml{,i}>: pkg_batteries
+# OASIS_STOP
+<ncurses/*.ml{,i}>: syntax_camlp4o, pkg_sexplib.syntax
+<widgets/*.ml{,i}>: syntax_camlp4o, pkg_sexplib.syntax, pkg_monad
+
+true: use_menhir

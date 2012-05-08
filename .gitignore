@@ -1,0 +1,12 @@
+/_build
+/cparser-*.tar.gz
+/doc/html
+/fcc
+/setup.data
+/setup.log
+/setup.ml
+/wip
+
+*.byte
+*.native
+*.docdir
