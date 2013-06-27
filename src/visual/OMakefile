@@ -1,0 +1,26 @@
+# Target
+Target		= visual
+Description	= Backends for widget drawing
+Version		= 0.1
+
+# Sources
+Modules[] =
+	BufferPen
+	ColorPair
+	CursesPen
+	Events
+	Palette
+	Screen
+
+# Library dependencies
+Requires[] =
+	batteries
+	ncurses
+	sexplib.syntax
+	structure
+
+# Camlp4
+Flags. +=
+  $|events.ml|	= -syntax camlp4o
+
+ocaml-pack ()

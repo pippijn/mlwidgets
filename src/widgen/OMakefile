@@ -1,0 +1,17 @@
+# Target
+Target		= widgen
+Description	= Widget parser and code generator
+Version		= 0.1
+
+# Sources
+Modules[] =
+	Factory
+	Lexer
+	Parser
+
+# Library dependencies
+Requires[] =
+	batteries
+	structure
+
+ocaml-pack ()
