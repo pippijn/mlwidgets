@@ -1,0 +1,23 @@
+# Target
+Target		= ncurses
+Description	= Extended curses interface
+Version		= 0.1
+
+# Sources
+Modules[] =
+	Ncurses
+
+CSources[] =
+	ml_ncurses
+
+# Library dependencies
+Requires[] =
+	batteries
+	curses
+	sexplib.syntax
+
+# Camlp4
+Flags. +=
+  $|ncurses.ml|	= -syntax camlp4o
+
+ocaml-library ()
