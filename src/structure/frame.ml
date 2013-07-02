@@ -43,12 +43,12 @@ class t ?(children=[]) ~geometry ~id = object (self)
       pen#addwch ch
     in
 
-    ExtInt.fold_left (fun pen i ->
+    CoreInt.fold_left (fun pen i ->
       addwch (Acs.hline) pen
     ) (pen#move { x = 1; y = 0 }) 1 (width - 2)
     |> ignore;
 
-    ExtInt.fold_left (fun pen i ->
+    CoreInt.fold_left (fun pen i ->
       addwch (Acs.hline) pen
     ) (pen#move { x = 1; y = height - 1; }) 1 (width - 2)
     |> ignore;
