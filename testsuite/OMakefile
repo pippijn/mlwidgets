@@ -1,1 +1,1 @@
-.SUBDIRS: widget
+.SUBDIRS: $(glob D, *)

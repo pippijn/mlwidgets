@@ -1,4 +1,4 @@
-open Structure.Concrete
+open Concrete
 
 
 let size_of_window window =
@@ -7,7 +7,7 @@ let size_of_window window =
 
 
 class t ~window = object (self)
-  inherit Structure.Pen.t ~size:(size_of_window window) as pen
+  inherit Pen.t ~size:(size_of_window window) as pen
 
   (** Painting. *)
   method mvaddwch { x; y } ch =

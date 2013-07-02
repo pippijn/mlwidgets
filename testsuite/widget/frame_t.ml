@@ -1,7 +1,3 @@
-open Structure
-open Visual
-
-
 let widget =
   let open Symbolic in
 
@@ -57,7 +53,7 @@ let widget =
 let run () =
   let size = Concrete.({ width = 32; height = 16; }) in
 
-  let geomap = Layout.Solver.solve size widget in
+  let geomap = LayoutSolver.solve size widget in
 
   let pen =
     (new BufferPen.t ~size)

@@ -1,7 +1,3 @@
-open Visual
-open Structure
-
-
 let run () =
   let size = Concrete.({ width = 32; height = 16; }) in
 
@@ -33,12 +29,12 @@ let run () =
 let draw widget =
   let size = Concrete.({ width = 42; height = 16; }) in
 
-  let geomap = Layout.Solver.solve size widget in
+  let geomap = LayoutSolver.solve size widget in
 
   let pen = new BufferPen.t ~size in
 
   let pen = pen#frame (StringMap.find widget#id geomap) in
 
-  widget#draw geomap (pen :> Structure.Pen.t);
+  widget#draw geomap (pen :> Pen.t);
 
   BufferPen.print size pen#buffer

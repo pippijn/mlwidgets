@@ -1,7 +1,3 @@
-open Structure
-open Visual
-
-
 let calc_geomap widget =
   let width  = Ncurses.wincols () in
   let height = Ncurses.winrows () in
@@ -11,7 +7,7 @@ let calc_geomap widget =
 
   let size = Concrete.({ width; height }) in
 
-  Layout.Solver.solve size widget
+  LayoutSolver.solve size widget
 
 
 let repaint widget geomap =

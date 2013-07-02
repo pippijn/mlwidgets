@@ -5,19 +5,19 @@ Version		= 0.1
 
 # Sources
 Modules[] =
-	Solver
+  LayoutSolver
 
 # Library dependencies
-Requires[] =
-	baselib
-	batteries
-	facile
-	monad-custom
-	sexplib.syntax
-	structure
+OCaml-Requires[] =
+  baselib
+  batteries
+  facile
+  monad-custom
+  sexplib.syntax
+  structure
 
 # Camlp4
 Flags. +=
-  $|solver.ml|	= -syntax camlp4o
+  $|layoutSolver.ml|	= -syntax camlp4o
 
-ocaml-pack ()
+library (.DEFAULT)

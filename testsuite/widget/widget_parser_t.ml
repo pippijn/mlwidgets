@@ -44,19 +44,19 @@ Frame frm0 {
 
 let widget =
   let lexbuf = Lexing.from_string str in
-  Widgen.Parser.parse Widgen.Lexer.token lexbuf
+  WidgetParser.parse WidgetLexer.token lexbuf
 
 
 let run () =
-  let size = Structure.Concrete.({ width = 32; height = 16; }) in
+  let size = Concrete.({ width = 32; height = 16; }) in
 
-  let geomap = Layout.Solver.solve size widget in
+  let geomap = LayoutSolver.solve size widget in
 
   let pen =
-    (new Visual.BufferPen.t ~size)
+    (new BufferPen.t ~size)
     #frame (StringMap.find widget#id geomap)
   in
 
-  widget#draw geomap (pen :> Structure.Pen.t);
+  widget#draw geomap (pen :> Pen.t);
 
-  Visual.BufferPen.print size pen#buffer
+  BufferPen.print size pen#buffer

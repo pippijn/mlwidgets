@@ -1,4 +1,4 @@
-open Structure.Symbolic
+open Symbolic
 
 type prop =
   | Prop_Width
@@ -50,12 +50,12 @@ let merge_geometry geom1 geom2 =
 
 type member =
   | Geometry of geometry
-  | Widget of Structure.Widget.t
+  | Widget of Widget.t
 
 type 'a constructor =
-  ?children:Structure.Widget.t list ->
-  geometry:Structure.Symbolic.geometry ->
-  id:Structure.Widget.Map.key ->
+  ?children:Widget.t list ->
+  geometry:Symbolic.geometry ->
+  id:Widget.Map.key ->
   'a
 
 
@@ -64,7 +64,7 @@ let create id members (make : 'a constructor) =
     List.fold_left (fun (geometry, children) -> function
       | Geometry partial -> merge_geometry geometry partial, children
       | Widget child -> geometry, child :: children
-    ) (Structure.Symbolic.free, []) members
+    ) (Symbolic.free, []) members
   in
 
-  (make ~children ~geometry ~id :> Structure.Widget.t)
+  (make ~children ~geometry ~id :> Widget.t)

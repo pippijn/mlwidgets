@@ -1,5 +1,5 @@
 {
-  open Parser
+  open WidgetParser
 }
 
 let lower	= ['a'-'z']

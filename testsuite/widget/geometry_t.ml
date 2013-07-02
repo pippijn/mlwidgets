@@ -3,14 +3,14 @@ let (|>) = BatPervasives.(|>)
 
 let parse str =
   let lexbuf = Lexing.from_string str in
-  Widgen.Parser.expr Widgen.Lexer.token lexbuf
+  WidgetParser.expr WidgetLexer.token lexbuf
 
 
 let test expr =
-  let simplified = Layout.Solver.preprocess expr in
+  let simplified = LayoutSolver.preprocess expr in
 
   simplified
-  |> Structure.Symbolic.sexp_of_expr
+  |> Symbolic.sexp_of_expr
   |> Sexplib.Sexp.to_string_hum
   |> print_endline
 

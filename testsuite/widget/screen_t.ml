@@ -1,5 +1,3 @@
-open Visual
-
 let run () =
   let open Ncurses in
   let root = Screen.(root.window) in

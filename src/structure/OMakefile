@@ -5,24 +5,24 @@ Version		= 0.1
 
 # Sources
 Modules[] =
-	Acs
-	Concrete
-	Container
-	Frame
-	Pen
-	Symbolic
-	Textbox
-	Widget
+  Acs
+  Concrete
+  Container
+  Frame
+  Pen
+  Symbolic
+  Textbox
+  Widget
 
 # Library dependencies
-Requires[] =
-	baselib
-	batteries
-	sexplib.syntax
+OCaml-Requires[] =
+  baselib
+  batteries
+  sexplib.syntax
 
 # Camlp4
 Flags. +=
   $|concrete.ml|	= -syntax camlp4o
   $|symbolic.ml|	= -syntax camlp4o
 
-ocaml-pack ()
+library (.DEFAULT)

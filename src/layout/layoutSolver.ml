@@ -20,14 +20,14 @@ let bottom_prop x = x ^ ".bottom"
 
 
 let print_expr =
-     Structure.Symbolic.sexp_of_expr
+     Symbolic.sexp_of_expr
   |- Sexplib.Sexp.to_string_hum
   |- print_endline
 
 
 (** Perform some constant folding. *)
 let simplify =
-  let open Structure.Symbolic in
+  let open Symbolic in
 
   let rec simplify = function
     (* Constant integer expressions. *)
@@ -84,7 +84,7 @@ let simplify =
     expressed in integer arithmetic. Only 2 decimal digits (after the
     point) are preserved. *)
 let rec normalise =
-  let open Structure.Symbolic in
+  let open Symbolic in
 
   function
   (* Transform [a * 1.4] to [(a * 140) / 100]. *)
@@ -136,7 +136,7 @@ let value variables id =
   | Unk _     -> failwith ("variable " ^ id ^ " is not concrete")
 
 
-let get_geometry value id = let open Structure.Concrete in {
+let get_geometry value id = let open Concrete in {
   size = {
     width = value (width_prop id);
     height = value (height_prop id);
@@ -151,7 +151,7 @@ let rec collect value map widget =
   let id = widget#id in
 
   StringMap.add id (get_geometry value id) map
-  |> Structure.Widget.Map.fold (fun id widget map ->
+  |> Widget.Map.fold (fun id widget map ->
        collect value map widget
      ) widget#children
 
@@ -185,7 +185,7 @@ end
 
 module Solver (Screen : Size) = struct
   open Facile
-  open Structure.Symbolic
+  open Symbolic
 
   (* First, the value domains. *)
   let xdom = Domain.interval 0 Screen.width
@@ -362,7 +362,7 @@ module Solver (Screen : Size) = struct
 
   (** Collect the ids of a widget's children. *)
   let child_ids widget =
-    Structure.Widget.Map.fold (fun id child ids ->
+    Widget.Map.fold (fun id child ids ->
       id :: ids
     ) widget#children []
 
@@ -372,7 +372,7 @@ module Solver (Screen : Size) = struct
       addressed. *)
   let rec collect_terms parent siblings id widget terms =
     let terms =
-      Structure.Widget.Map.fold
+      Widget.Map.fold
         (collect_terms id (child_ids widget))
         widget#children terms
     in
@@ -395,7 +395,7 @@ module Solver (Screen : Size) = struct
 
     let collect_ids widget =
       let rec collect id widget ids =
-        Structure.Widget.Map.fold collect widget#children (id :: ids)
+        Widget.Map.fold collect widget#children (id :: ids)
       in
 
       collect widget#id widget []
@@ -424,7 +424,7 @@ end
 (** Compute all geometries for a widget tree within the passed screen size. *)
 let solve screen widget =
   let width, height =
-    let open Structure.Concrete in
+    let open Concrete in
     (screen.width, screen.height)
   in
 
@@ -504,7 +504,7 @@ let solve screen widget =
 (** Helper function that coerces the widget to [Widget.t]. *)
 let solve screen widget =
   let stime = Unix.gettimeofday () in
-  let concrete = solve screen (widget :> Structure.Widget.t) in
+  let concrete = solve screen (widget :> Widget.t) in
   let etime = Unix.gettimeofday () in
 
   if debug then

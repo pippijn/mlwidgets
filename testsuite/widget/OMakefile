@@ -3,27 +3,26 @@ Target		= widget_test
 
 # Sources
 Modules[] =
-	Buffer_pen_t
-	Constraint_t
-	Curses_pen_t
-	Dynamic_t
-	Frame_t
-	Geometry_t
-	Ncurses_t
-	Palette_t
-	Pen_t
-	Screen_t
-	Test
-	Testsuite
-	Textbox_t
-	Widget_parser_t
+  Buffer_pen_t
+  Constraint_t
+  Curses_pen_t
+  Dynamic_t
+  Frame_t
+  Geometry_t
+  Ncurses_t
+  Palette_t
+  Pen_t
+  Screen_t
+  Test
+  Testsuite
+  Textbox_t
+  Widget_parser_t
 
 # Library dependencies
-Requires[] =
-	facile
-	layout
-	structure
-	visual
-	widgen
+OCaml-Requires[] =
+  layout
+  structure
+  visual
+  widgen
 
-ocaml-program ()
+program (.DEFAULT)

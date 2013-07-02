@@ -1,8 +1,8 @@
-open Structure.Concrete
+open Concrete
 
 
 class t ~size = object (self)
-  inherit Structure.Pen.t ~size as pen
+  inherit Pen.t ~size as pen
 
   val buffer = Array.make (size.width * size.height) []
 

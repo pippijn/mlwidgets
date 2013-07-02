@@ -1,6 +1,6 @@
 %{
-  open Factory
-  open Structure.Symbolic
+  open WidgetFactory
+  open Symbolic
 %}
 
 %token EOF
@@ -42,8 +42,8 @@
 
 
 %start parse expr
-%type<Structure.Widget.t> parse
-%type<Structure.Symbolic.expr> expr
+%type<Widget.t> parse
+%type<Symbolic.expr> expr
 
 %%
 
@@ -68,7 +68,7 @@ classname
 	: TK_CLASSNAME
 		{ failwith ("unknown class: " ^ $1) }
 	| CL_FRAME
-		{ new Structure.Frame.t }
+		{ new Frame.t }
         ;
 
 

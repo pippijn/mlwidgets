@@ -5,13 +5,13 @@ Version		= 0.1
 
 # Sources
 Modules[] =
-	Factory
-	Lexer
-	Parser
+  WidgetFactory
+  WidgetLexer
+  WidgetParser
 
 # Library dependencies
-Requires[] =
-	batteries
-	structure
+OCaml-Requires[] =
+  batteries
+  structure
 
-ocaml-pack ()
+library (.DEFAULT)

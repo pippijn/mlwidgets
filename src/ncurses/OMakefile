@@ -5,19 +5,19 @@ Version		= 0.1
 
 # Sources
 Modules[] =
-	Ncurses
+  Ncurses
 
-CSources[] =
-	ml_ncurses
+Sources[] =
+  ml_ncurses.c
 
 # Library dependencies
-Requires[] =
-	batteries
-	curses
-	sexplib.syntax
+OCaml-Requires[] =
+  batteries
+  curses
+  sexplib.syntax
 
 # Camlp4
 Flags. +=
   $|ncurses.ml|	= -syntax camlp4o
 
-ocaml-library ()
+library (.DEFAULT)

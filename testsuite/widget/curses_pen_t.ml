@@ -1,6 +1,3 @@
-open Structure
-open Visual
-
 let (|>) = BatPervasives.(|>)
 
 
@@ -24,7 +21,7 @@ let test2 () =
 
   let widget = Widget_parser_t.widget in
 
-  let geomap = Layout.Solver.solve (CursesPen.size_of_window Screen.(root.window)) widget in
+  let geomap = LayoutSolver.solve (CursesPen.size_of_window Screen.(root.window)) widget in
 
   widget#draw geomap (pen :> Pen.t)
 

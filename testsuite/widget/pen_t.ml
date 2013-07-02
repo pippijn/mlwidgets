@@ -1,6 +1,3 @@
-open Structure
-open Visual
-
 let (|>) = BatPervasives.(|>)
 
 
