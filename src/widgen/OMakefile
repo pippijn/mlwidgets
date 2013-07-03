@@ -1,5 +1,5 @@
 # Target
-Target		= widgen
+Name		= widgen
 Description	= Widget parser and code generator
 Version		= 0.1
 
@@ -14,4 +14,4 @@ OCaml-Requires[] =
   batteries
   structure
 
-library (.DEFAULT)
+library-install (.DEFAULT)

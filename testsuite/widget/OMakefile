@@ -1,5 +1,5 @@
 # Target
-Target		= widget_test
+Name		= widget_test
 
 # Sources
 Modules[] =
@@ -25,4 +25,4 @@ OCaml-Requires[] =
   visual
   widgen
 
-program (.DEFAULT)
+program-install (.DEFAULT)

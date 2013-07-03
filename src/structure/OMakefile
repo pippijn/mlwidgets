@@ -1,5 +1,5 @@
 # Target
-Target		= structure
+Name		= structure
 Description	= Abstract widget data structures
 Version		= 0.1
 
@@ -25,4 +25,4 @@ Flags. +=
   $|concrete.ml|	= -syntax camlp4o
   $|symbolic.ml|	= -syntax camlp4o
 
-library (.DEFAULT)
+library-install (.DEFAULT)

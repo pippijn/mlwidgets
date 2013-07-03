@@ -1,5 +1,5 @@
 # Target
-Target		= visual
+Name		= visual
 Description	= Backends for widget drawing
 Version		= 0.1
 
@@ -23,4 +23,4 @@ OCaml-Requires[] =
 Flags. +=
   $|events.ml|	= -syntax camlp4o
 
-library (.DEFAULT)
+library-install (.DEFAULT)

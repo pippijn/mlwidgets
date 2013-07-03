@@ -1,5 +1,5 @@
 # Target
-Target		= layout
+Name		= layout
 Description	= Widget layout computation
 Version		= 0.1
 
@@ -20,4 +20,4 @@ OCaml-Requires[] =
 Flags. +=
   $|layoutSolver.ml|	= -syntax camlp4o
 
-library (.DEFAULT)
+library-install (.DEFAULT)
