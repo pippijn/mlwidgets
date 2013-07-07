@@ -1,4 +1,4 @@
-let (|>) = BatPervasives.(|>)
+open CorePervasives
 
 
 let test1 () =

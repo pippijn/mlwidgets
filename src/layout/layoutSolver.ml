@@ -1,5 +1,4 @@
-let (|>) = BatPervasives.(|>)
-let (|-) = BatPervasives.(|-)
+open CorePervasives
 
 
 let debug = false

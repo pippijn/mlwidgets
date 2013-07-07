@@ -1,6 +1,5 @@
+open CorePervasives
 open Sexplib.Conv
-
-let (|-) = BatPervasives.(|-)
 
 
 type id =

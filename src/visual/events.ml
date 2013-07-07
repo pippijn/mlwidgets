@@ -1,6 +1,5 @@
+open CorePervasives
 open Sexplib.Conv
-
-let (|-) = BatPervasives.(|-)
 
 
 type keymap = (string * Ncurses.Event.t) list

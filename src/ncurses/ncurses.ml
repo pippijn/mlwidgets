@@ -1,4 +1,4 @@
-let (|>) = BatPervasives.(|>)
+let (|>) x f = f x
 
 
 type window = { win : Curses.window }

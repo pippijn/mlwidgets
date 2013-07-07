@@ -1,6 +1,5 @@
+open CorePervasives
 open Concrete
-
-let (|>) = BatPervasives.(|>)
 
 
 class virtual t ~size = object (self)
