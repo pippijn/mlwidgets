@@ -1,0 +1,8 @@
+=head1 ML Widgets
+
+MLWidgets is a layout engine with a widget library. The primary target is
+console based application development with C<ncurses>, but both the layout
+engine and the widgets are written in a backend-agnostic way, so that web-based
+or GUI-based backends can be implemented.
+
+L<Git repository|https://github.com/pippijn/mlwidgets>
