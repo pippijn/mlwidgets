@@ -109,7 +109,7 @@ class virtual t ~size = object (self)
 
 
   (** Painting. *)
-  method virtual private mvaddwch : position -> BatCamomile.UChar.t -> unit
+  method virtual private mvaddwch : position -> BatUChar.t -> unit
 
   method addwch ch =
     let { x; y } = position in
@@ -157,9 +157,20 @@ class virtual t ~size = object (self)
         BatUTF8.sub str pos len
     in
 
+    let rec fold_utf8 pen pos =
+      if BatUTF8.out_of_range str pos then
+        pen
+      else
+        let ch = BatUTF8.look str pos in
+        fold_utf8 (pen#addwch ch) (BatUTF8.next str pos)
+    in
+
+    fold_utf8 (self :> t) (BatUTF8.first str)
+    (* Old way:
     BatEnum.fold (fun pen ch ->
       pen#addwch ch
     ) (self :> t) (BatUTF8.enum str)
+    *)
 
 
   method addwstr str =
@@ -167,11 +178,13 @@ class virtual t ~size = object (self)
 
 
   method addnstr str pos len =
-    self#addnwstr (BatUTF8.adopt str) pos len
+    BatUTF8.validate str;
+    self#addnwstr str pos len
 
 
   method addstr str =
-    self#addwstr (BatUTF8.adopt str)
+    BatUTF8.validate str;
+    self#addwstr str
 
 
 end

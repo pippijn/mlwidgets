@@ -20,8 +20,8 @@ let bottom_prop x = x ^ ".bottom"
 
 let print_expr =
      Symbolic.sexp_of_expr
-  |- Sexplib.Sexp.to_string_hum
-  |- print_endline
+  %> Sexplib.Sexp.to_string_hum
+  %> print_endline
 
 
 (** Perform some constant folding. *)
@@ -121,7 +121,7 @@ let rec normalise =
 (** Simplify and normalise expression. *)
 let preprocess =
      simplify
-  |- normalise
+  %> normalise
 
 
 
@@ -220,21 +220,21 @@ module Solver (Screen : Size) = struct
 
 
   (* Short-cuts for properties. *)
-  let width_var  = width_prop  |- xvar
-  let height_var = height_prop |- yvar
-  let left_var   = left_prop   |- xvar
-  let top_var    = top_prop    |- yvar
-  let right_var  = right_prop  |- xvar
-  let bottom_var = bottom_prop |- yvar
+  let width_var  = width_prop  %> xvar
+  let height_var = height_prop %> yvar
+  let left_var   = left_prop   %> xvar
+  let top_var    = top_prop    %> yvar
+  let right_var  = right_prop  %> xvar
+  let bottom_var = bottom_prop %> yvar
 
 
   (* Short-cuts for properties. *)
-  let width_expr  = width_var  |- Arith.fd2e
-  let height_expr = height_var |- Arith.fd2e
-  let left_expr   = left_var   |- Arith.fd2e
-  let top_expr    = top_var    |- Arith.fd2e
-  let right_expr  = right_var  |- Arith.fd2e
-  let bottom_expr = bottom_var |- Arith.fd2e
+  let width_expr  = width_var  %> Arith.fd2e
+  let height_expr = height_var %> Arith.fd2e
+  let left_expr   = left_var   %> Arith.fd2e
+  let top_expr    = top_var    %> Arith.fd2e
+  let right_expr  = right_var  %> Arith.fd2e
+  let bottom_expr = bottom_var %> Arith.fd2e
 
 
   (** Construct a constraint term for a symbolic geometry expression.
@@ -320,15 +320,15 @@ module Solver (Screen : Size) = struct
   (** Add terms for a widget's size. *)
   let size_terms parent siblings id { width; height; } =
        width_term  parent siblings id width
-    |- height_term parent siblings id height
+    %> height_term parent siblings id height
 
 
   (** Add terms for a widget's position. *)
   let position_terms parent siblings id { left; top; right; bottom } =
        left_term   parent siblings id left
-    |- top_term    parent siblings id top
-    |- right_term  parent siblings id right
-    |- bottom_term parent siblings id bottom
+    %> top_term    parent siblings id top
+    %> right_term  parent siblings id right
+    %> bottom_term parent siblings id bottom
 
 
   (** Add terms that describe the relationship between left/right and width
@@ -355,8 +355,8 @@ module Solver (Screen : Size) = struct
   (** Add terms for a widget's geometry (size/position). *)
   let geometry_terms parent siblings id { size; position; } =
        size_terms parent siblings id size
-    |- position_terms parent siblings id position
-    |- relative_terms parent siblings id
+    %> position_terms parent siblings id position
+    %> relative_terms parent siblings id
 
 
   (** Collect the ids of a widget's children. *)

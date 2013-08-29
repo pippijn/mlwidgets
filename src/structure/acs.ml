@@ -1,5 +1,7 @@
 let make ch =
-  (BatUTF8.get (BatUTF8.adopt ch) 0)
+  BatUTF8.validate ch;
+  assert (not (BatUTF8.out_of_range ch (BatUTF8.first ch)));
+  BatUTF8.look ch (BatUTF8.first ch)
 
 
 let hline    = make "─"

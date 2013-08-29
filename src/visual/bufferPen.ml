@@ -33,7 +33,7 @@ let print { width; height; } buf =
       | [] ->
           print_char ' '
       | hd :: _ ->
-          BatUTF8.print BatPervasives.stdout (BatUTF8.of_char hd)
+          print_string (BatUTF8.init 1 (BatPervasives.const hd))
     done;
     print_string (colour "┃\n")
   done;

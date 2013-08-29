@@ -20,14 +20,14 @@ type geometry = {
 
 let string_of_size =
   sexp_of_size
-  |- Sexplib.Sexp.to_string_hum
+  %> Sexplib.Sexp.to_string_hum
 
 
 let string_of_position =
   sexp_of_position
-  |- Sexplib.Sexp.to_string_hum
+  %> Sexplib.Sexp.to_string_hum
 
 
 let string_of_geometry =
   sexp_of_geometry
-  |- Sexplib.Sexp.to_string_hum
+  %> Sexplib.Sexp.to_string_hum

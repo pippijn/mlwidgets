@@ -20,7 +20,7 @@ let keymap_of_string str =
 
 let string_of_event =
   Ncurses.Event.sexp_of_t
-  |- Sexplib.Sexp.to_string_hum
+  %> Sexplib.Sexp.to_string_hum
 
 
 let describe_mouse_button = let open Ncurses.Mouse in function

@@ -47,7 +47,7 @@ type geometry = {
 
 let string_of_geometry =
   sexp_of_geometry
-  |- Sexplib.Sexp.to_string_hum
+  %> Sexplib.Sexp.to_string_hum
 
 
 (** Default geometry completely fills its parent. *)

@@ -18,7 +18,7 @@ let widget =
         }
         ~model:(
           object(self)
-            method text = BatUTF8.adopt "Hello, this is a very long text that is line-wrapped by character."
+            method text = "Hello, this is a very long text that is line-wrapped by character."
           end
         )
         :> Widget.t)
