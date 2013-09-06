@@ -1,3 +1,4 @@
+open CorePervasives
 open Concrete
 
 open CamomileLibraryDefault.Camomile
@@ -35,7 +36,7 @@ let print { width; height; } buf =
       | [] ->
           print_char ' '
       | hd :: _ ->
-          print_string (UTF8.init 1 (CorePervasives.const hd))
+          print_string (UTF8.init 1 (const hd))
     done;
     print_string (colour "┃\n")
   done;
