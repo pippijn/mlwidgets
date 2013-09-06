@@ -13,7 +13,7 @@ install Library ".DEFAULT" [
 
   (* Library dependencies *)
   OCamlRequires [
-    "batteries";
+    "corelib";
     "structure";
   ];
 ]

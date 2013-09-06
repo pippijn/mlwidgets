@@ -18,8 +18,8 @@ install Library ".DEFAULT" [
 
   (* Library dependencies *)
   OCamlRequires [
-    "baselib";
-    "batteries";
+    "corelib";
+    "camomile";
     "sexplib.syntax";
   ];
 

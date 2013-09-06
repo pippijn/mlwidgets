@@ -1,6 +1,9 @@
+open CamomileLibraryDefault.Camomile
+
+
 class virtual model = object (self)
 
-  method virtual text : BatUTF8.t
+  method virtual text : UTF8.t
 
 end
 
@@ -14,7 +17,7 @@ class t ~geometry ~id ~model = object (self)
 
     let open Concrete in
     let width = geometry.size.width in
-    let length = BatUTF8.length text in
+    let length = UTF8.length text in
 
     let rec write_line y =
       let pos = y * width in

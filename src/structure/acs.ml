@@ -1,7 +1,10 @@
+open CamomileLibraryDefault.Camomile
+
+
 let make ch =
-  let ch = BatUTF8.adopt ch in
-  assert (not (BatUTF8.out_of_range ch (BatUTF8.first ch)));
-  BatUTF8.look ch (BatUTF8.first ch)
+  UTF8.validate ch;
+  assert (not (UTF8.out_of_range ch (UTF8.first ch)));
+  UTF8.look ch (UTF8.first ch)
 
 
 let hline    = make "─"

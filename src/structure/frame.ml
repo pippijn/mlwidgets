@@ -1,5 +1,4 @@
 open CorePervasives
-let (--) = BatPervasives.(--)
 
 
 let padded geometry children id =

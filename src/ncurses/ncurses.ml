@@ -1,3 +1,6 @@
+open CamomileLibraryDefault.Camomile
+
+
 let (|>) x f = f x
 
 
@@ -203,7 +206,7 @@ let mvwaddstr {win} y x str = Curses.mvwaddstr win y x str |> err "mvwaddstr"
 
 
 external setlocale : string -> unit		= "ml_setlocale"
-external wcwidth : BatUChar.t -> int		= "ml_wcwidth"
+external wcwidth : UChar.t -> int		= "ml_wcwidth"
 external wincols : unit -> int			= "ml_wincols"
 external winrows : unit -> int			= "ml_winrows"
 

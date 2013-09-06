@@ -1,5 +1,7 @@
 open Concrete
 
+open CamomileLibraryDefault.Camomile
+
 
 class t ~size = object (self)
   inherit Pen.t ~size as pen
@@ -33,7 +35,7 @@ let print { width; height; } buf =
       | [] ->
           print_char ' '
       | hd :: _ ->
-          print_string (BatUTF8.init 1 (BatPervasives.const hd))
+          print_string (UTF8.init 1 (CorePervasives.const hd))
     done;
     print_string (colour "┃\n")
   done;

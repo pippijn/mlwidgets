@@ -1,5 +1,7 @@
 open Concrete
 
+open CamomileLibraryDefault.Camomile
+
 
 let size_of_window window =
   let height, width = Ncurses.getmaxyx window in
@@ -12,7 +14,7 @@ class t ~window = object (self)
   (** Painting. *)
   method mvaddwch { x; y } ch =
     try
-      Ncurses.mvwaddstr window y x (BatUTF8.of_char ch :> string)
+      Ncurses.mvwaddstr window y x (UTF8.init 1 (CorePervasives.const ch))
     with Failure "mvwaddstr" as e ->
       let right  = viewport.position.x + viewport.size.width  - 1 in
       let bottom = viewport.position.y + viewport.size.height - 1 in

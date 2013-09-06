@@ -247,7 +247,7 @@ module Solver (Screen : Size) = struct
     (** This function makes sure that binary expressions involving [Free]
         (mapped to [None]) also return [None]. *)
     let binary a op b =
-      let open BatOption.Monad in
+      let open CoreOption in
       perform
         a <-- continue a;
         b <-- continue b;

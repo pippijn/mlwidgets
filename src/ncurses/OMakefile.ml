@@ -15,7 +15,7 @@ install Library ".DEFAULT" [
 
   (* Library dependencies *)
   OCamlRequires [
-    "batteries";
+    "camomile";
     "curses";
     "sexplib.syntax";
   ];

@@ -10,7 +10,7 @@ type prop =
 
 
 let prop prop target =
-  let target = BatOption.default Self target in
+  let target = CoreOption.default Self target in
   match prop with
   | Prop_Width  -> Width  target
   | Prop_Height -> Height target

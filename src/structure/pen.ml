@@ -1,6 +1,8 @@
 open CorePervasives
 open Concrete
 
+open CamomileLibraryDefault.Camomile
+
 
 class virtual t ~size = object (self)
 
@@ -109,7 +111,7 @@ class virtual t ~size = object (self)
 
 
   (** Painting. *)
-  method virtual private mvaddwch : position -> BatUChar.t -> unit
+  method virtual private mvaddwch : position -> UChar.t -> unit
 
   method addwch ch =
     let { x; y } = position in
@@ -151,21 +153,24 @@ class virtual t ~size = object (self)
   (** Default, inefficient implementation for writing strings character-wise. *)
   method addnwstr str pos len =
     let str =
-      if pos = 0 && len = BatUTF8.length str then
+      if pos = 0 && len = UTF8.length str then
         str
       else
-        BatUTF8.sub str pos len
+        let ipos = UTF8.nth str pos in
+        let ilen = UTF8.nth str (pos + len) - ipos in
+        String.sub str ipos ilen
     in
 
     let rec fold_utf8 pen pos =
-      if BatUTF8.out_of_range str pos then
+      if UTF8.out_of_range str pos then
         pen
       else
-        let ch = BatUTF8.look str pos in
-        fold_utf8 (pen#addwch ch) (BatUTF8.next str pos)
+        let ch = UTF8.look str pos in
+        print_endline "addwch";
+        fold_utf8 (pen#addwch ch) (UTF8.next str pos)
     in
 
-    fold_utf8 (self :> t) (BatUTF8.first str)
+    fold_utf8 (self :> t) (UTF8.first str)
     (* Old way:
     BatEnum.fold (fun pen ch ->
       pen#addwch ch
@@ -174,16 +179,16 @@ class virtual t ~size = object (self)
 
 
   method addwstr str =
-    self#addnwstr str 0 (BatUTF8.length str)
+    self#addnwstr str 0 (UTF8.length str)
 
 
   method addnstr str pos len =
-    let str = BatUTF8.adopt str in
+    UTF8.validate str;
     self#addnwstr str pos len
 
 
   method addstr str =
-    let str = BatUTF8.adopt str in
+    UTF8.validate str;
     self#addwstr str
 
 
