@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/visual/*.a
+@OCamlStdlibDir@/visual/*.cm[ix]
+@OCamlStdlibDir@/visual/*.cmxa

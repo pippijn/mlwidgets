@@ -1,0 +1,6 @@
+@OCamlStdlibDir@/ncurses/META
+@OCamlStdlibDir@/ncurses/*.cma
+@OCamlStdlibDir@/ncurses/*.cmxs
+
+OPT: @OCamlStdlibDir@/stublibs/*.so
+OPT: @OCamlStdlibDir@/stublibs/*.so.owner

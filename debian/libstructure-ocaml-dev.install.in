@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/structure/*.a
+@OCamlStdlibDir@/structure/*.cm[ix]
+@OCamlStdlibDir@/structure/*.cmxa

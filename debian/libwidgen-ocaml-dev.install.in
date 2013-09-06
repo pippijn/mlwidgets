@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/widgen/*.a
+@OCamlStdlibDir@/widgen/*.cm[ix]
+@OCamlStdlibDir@/widgen/*.cmxa

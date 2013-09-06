@@ -1,0 +1,96 @@
+Source: ocaml-widget
+Section: ocaml
+Priority: optional
+Maintainer: Pippijn van Steenhoven <pip88nl@gmail.com>
+Uploaders: 
+  Pippijn van Steenhoven <pip88nl@gmail.com>
+Build-Depends:
+  ocaml-nox (>= 3.12),
+  ocaml-findlib,
+  omake,
+  noweb,
+  libbaselib-ocaml-dev,
+  libsexplib-camlp4-dev,
+  dh-ocaml,
+  debhelper (>= 8.0.0)
+Standards-Version: 3.9.2
+Homepage: https://github.com/pippijn/widget_test
+Vcs-Git: git://github.com/pippijn/widget_test
+Vcs-Browser: https://github.com/pippijn/widget_test
+
+Package: widget-test
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: liblayout-ocaml
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: liblayout-ocaml-dev
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libncurses-ocaml
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libncurses-ocaml-dev
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libstructure-ocaml
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libstructure-ocaml-dev
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libvisual-ocaml
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libvisual-ocaml-dev
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libwidgen-ocaml
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.
+
+Package: libwidgen-ocaml-dev
+Architecture: any
+Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Provides: ${ocaml:Provides}
+Description: Fast lexer generator compatible with ocamllex
+ Stuff.

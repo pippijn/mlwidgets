@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/layout/*.a
+@OCamlStdlibDir@/layout/*.cm[ix]
+@OCamlStdlibDir@/layout/*.cmxa

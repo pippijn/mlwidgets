@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/visual/META
+@OCamlStdlibDir@/visual/*.cma
+@OCamlStdlibDir@/visual/*.cmxs

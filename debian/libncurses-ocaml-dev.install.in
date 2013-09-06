@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/ncurses/*.a
+@OCamlStdlibDir@/ncurses/*.cm[ix]
+@OCamlStdlibDir@/ncurses/*.cmxa

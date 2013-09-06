@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/layout/META
+@OCamlStdlibDir@/layout/*.cma
+@OCamlStdlibDir@/layout/*.cmxs

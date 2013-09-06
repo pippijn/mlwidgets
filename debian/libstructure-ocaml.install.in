@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/structure/META
+@OCamlStdlibDir@/structure/*.cma
+@OCamlStdlibDir@/structure/*.cmxs
