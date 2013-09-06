@@ -1,5 +1,5 @@
 let make ch =
-  BatUTF8.validate ch;
+  let ch = BatUTF8.adopt ch in
   assert (not (BatUTF8.out_of_range ch (BatUTF8.first ch)));
   BatUTF8.look ch (BatUTF8.first ch)
 

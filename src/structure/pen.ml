@@ -178,12 +178,12 @@ class virtual t ~size = object (self)
 
 
   method addnstr str pos len =
-    BatUTF8.validate str;
+    let str = BatUTF8.adopt str in
     self#addnwstr str pos len
 
 
   method addstr str =
-    BatUTF8.validate str;
+    let str = BatUTF8.adopt str in
     self#addwstr str
 
 
