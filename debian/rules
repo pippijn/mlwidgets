@@ -12,8 +12,8 @@ include /usr/share/ocaml/ocamlvars.mk
 OCAMLFIND_DESTDIR = $(DESTDIR)/$(OCAML_STDLIB_DIR)
 export OCAMLFIND_DESTDIR
 
-override_dh_auto_install: $(OCAMLFIND_DESTDIR)
-$(OCAMLFIND_DESTDIR):
+override_dh_auto_install: $(OCAMLFIND_DESTDIR)/stublibs
+$(OCAMLFIND_DESTDIR)/stublibs:
 	mkdir -p $@
 
 %:
