@@ -5,11 +5,16 @@ Maintainer: Pippijn van Steenhoven <pip88nl@gmail.com>
 Uploaders: 
   Pippijn van Steenhoven <pip88nl@gmail.com>
 Build-Depends:
+  obuild,
   ocaml-nox (>= 3.12),
   ocaml-findlib,
-  omake,
-  noweb,
-  libbaselib-ocaml-dev,
+  menhir,
+  camlp4-extra,
+  libbatteries-ocaml-dev,
+  libcurses-ocaml-dev,
+  libderiving-ocsigen-ocaml-dev,
+  libfacile-ocaml-dev,
+  libsexplib-camlp4-dev,
   libsexplib-camlp4-dev,
   dh-ocaml,
   debhelper (>= 8.0.0)
