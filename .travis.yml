@@ -9,16 +9,9 @@ install:
    - sudo apt-get install devscripts equivs
    - wget https://raw.github.com/pippijn/obuild/master/script/travis-depend?$(date +%s) -O travis-depend
    - chmod +x travis-depend
-   - ./travis-depend obuild baselib
+   - ./travis-depend obuild baselib pa_monad_custom
    # Package dependencies.
    - sudo mk-build-deps -ir
-   # Extra dependencies
-   - cd ..
-   - hg clone https://bitbucket.org/camlspotter/pa_monad_custom
-   - cd pa_monad_custom
-   - make
-   - sudo make findlib-install
-   - cd ../mlwidgets
 
 # whitelist
 branches:
