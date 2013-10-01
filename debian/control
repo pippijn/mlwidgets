@@ -5,19 +5,18 @@ Maintainer: Pippijn van Steenhoven <pip88nl@gmail.com>
 Uploaders: 
   Pippijn van Steenhoven <pip88nl@gmail.com>
 Build-Depends:
+  debhelper (>= 8.0.0),
   obuild,
+  dh-ocaml,
   ocaml-nox (>= 3.12),
   ocaml-findlib,
-  menhir,
-  camlp4-extra,
   libbatteries-ocaml-dev,
   libcurses-ocaml-dev,
   libderiving-ocsigen-ocaml-dev,
   libfacile-ocaml-dev,
   libsexplib-camlp4-dev,
-  libsexplib-camlp4-dev,
-  dh-ocaml,
-  debhelper (>= 8.0.0)
+  camlp4-extra,
+  menhir
 Standards-Version: 3.9.2
 Homepage: https://github.com/pippijn/widget_test
 Vcs-Git: git://github.com/pippijn/widget_test
