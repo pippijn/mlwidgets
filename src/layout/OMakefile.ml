@@ -14,7 +14,6 @@ install Library ".DEFAULT" [
     "corelib";
     "facile";
     "monad-custom";
-    "sexplib.syntax";
     "structure";
   ];
 

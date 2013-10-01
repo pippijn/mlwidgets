@@ -10,10 +10,10 @@ Build-Depends:
   dh-ocaml,
   ocaml-nox (>= 3.12),
   ocaml-findlib,
-  libbatteries-ocaml-dev,
+  libbaselib-ocaml-dev,
   libcurses-ocaml-dev,
-  libderiving-ocsigen-ocaml-dev,
   libfacile-ocaml-dev,
+  libmonad-custom-camlp4-dev,
   libsexplib-camlp4-dev,
   camlp4-extra,
   menhir
