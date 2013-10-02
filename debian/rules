@@ -6,7 +6,6 @@
 
 DESTDIR = $(CURDIR)/debian/tmp
 
-include $(shell obuild --where)/debian/rules.common
 include /usr/share/ocaml/ocamlvars.mk
 
 OCAMLFIND_DESTDIR = $(DESTDIR)/$(OCAML_STDLIB_DIR)
@@ -18,3 +17,5 @@ $(OCAMLFIND_DESTDIR)/stublibs:
 
 %:
 	dh --with ocaml $@
+
+include $(shell obuild --where)/debian/rules.common

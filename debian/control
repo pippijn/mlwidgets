@@ -2,8 +2,6 @@ Source: ocaml-widget
 Section: ocaml
 Priority: optional
 Maintainer: Pippijn van Steenhoven <pip88nl@gmail.com>
-Uploaders: 
-  Pippijn van Steenhoven <pip88nl@gmail.com>
 Build-Depends:
   debhelper (>= 8.0.0),
   obuild,
@@ -18,83 +16,116 @@ Build-Depends:
   camlp4-extra,
   menhir
 Standards-Version: 3.9.2
-Homepage: https://github.com/pippijn/widget_test
-Vcs-Git: git://github.com/pippijn/widget_test
-Vcs-Browser: https://github.com/pippijn/widget_test
+Homepage: https://github.com/pippijn/mlwidgets
+Vcs-Git: git://github.com/pippijn/mlwidgets
+Vcs-Browser: https://github.com/pippijn/mlwidgets
 
 Package: widget-test
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains a test program for the layout engine and widgets.
 
 Package: liblayout-ocaml
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains the layout engine.
 
 Package: liblayout-ocaml-dev
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains development files for the layout engine.
 
 Package: libncurses-ocaml
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains the Curses extensions.
 
 Package: libncurses-ocaml-dev
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains development files for the Curses extensions.
 
 Package: libstructure-ocaml
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains the widgets.
 
 Package: libstructure-ocaml-dev
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains development files for the widgets.
 
 Package: libvisual-ocaml
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains classes for drawing widgets onto a screen or into a buffer.
 
 Package: libvisual-ocaml-dev
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains development files for the drawing classes.
 
 Package: libwidgen-ocaml
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains the widget parser.
 
 Package: libwidgen-ocaml-dev
 Architecture: any
 Depends: ${ocaml:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Provides: ${ocaml:Provides}
-Description: Fast lexer generator compatible with ocamllex
- Stuff.
+Description: Console widget toolkit for OCaml
+ Curses widget toolkit and layout engine for OCaml.
+ We use facile to solve layout constraints.
+ .
+ This package contains development files for the widget parser.
