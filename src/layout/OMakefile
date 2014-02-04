@@ -1,0 +1,18 @@
+Name		= layout
+Description	= Widget layout computation
+Version		= 0.1
+
+OCaml-Sources[] =
+  LayoutSolver
+
+OCaml-Requires[] =
+  corelib
+  facile
+  monad-custom
+  structure
+
+Flags. +=
+  $|layoutSolver.ml|	= -syntax camlp4o
+
+TARGET = $(library-install)
+.DEFAULT: $(TARGET)

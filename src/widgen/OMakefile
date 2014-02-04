@@ -1,0 +1,15 @@
+Name		= widgen
+Description	= Widget parser and code generator
+Version		= 0.1
+
+OCaml-Sources[] =
+  WidgetFactory
+  WidgetLexer
+  WidgetParser
+
+OCaml-Requires[] =
+  corelib
+  structure
+
+TARGET = $(library-install)
+.DEFAULT: $(TARGET)

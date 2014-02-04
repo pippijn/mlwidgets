@@ -1,0 +1,20 @@
+Name		= ncurses
+Description	= Extended curses interface
+Version		= 0.1
+
+OCaml-Sources[] =
+  Ncurses
+
+OCaml-Requires[] =
+  camomile
+  curses
+  sexplib.syntax
+
+C-Sources[] =
+  ml_ncurses.c
+
+Flags. +=
+  $|ncurses.ml|		= -syntax camlp4o
+
+TARGET = $(library-install)
+.DEFAULT: $(TARGET)

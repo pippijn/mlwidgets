@@ -1,0 +1,23 @@
+Name		= visual
+Description	= Backends for widget drawing
+Version		= 0.1
+
+OCaml-Sources[] =
+  BufferPen
+  ColorPair
+  CursesPen
+  Events
+  Palette
+  Screen
+
+OCaml-Requires[] =
+  corelib
+  ncurses
+  sexplib.syntax
+  structure
+
+Flags. +=
+  $|events.ml|	= -syntax camlp4o
+
+TARGET = $(library-install)
+.DEFAULT: $(TARGET)
